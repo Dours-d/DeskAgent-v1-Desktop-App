@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising Campaign Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .form-container {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+            width: 200px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+        }
+        
+        .whatsapp-preview {
+            background: #f0f9ff;
+            border: 2px dashed #4f46e5;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .whatsapp-preview h3 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+        }
+        
+        .preview-content {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        
+        .status-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        
+        .char-count {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎗️ Create Fundraising Campaign</h1>
+            <p>Fill in your details and we'll help you create a compelling campaign</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="campaignForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">WhatsApp Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+31 6 12345678">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Campaign Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="medical">Medical & Health</option>
+                            <option value="education">Education</option>
+                            <option value="emergency">Emergency Relief</option>
+                            <option value="community">Community Projects</option>
+                            <option value="environment">Environment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="target_amount">Target Amount (€) *</label>
+                        <input type="number" id="target_amount" name="target_amount" required min="1" placeholder="1000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donation_type">Donation Type</label>
+                        <select id="donation_type" name="donation_type">
+                            <option value="one-time">One-time donations</option>
+                            <option value="monthly">Monthly recurring</option>
+                            <option value="both">Both options</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="campaign_title">Campaign Title *</label>
+                    <input type="text" id="campaign_title" name="campaign_title" required placeholder="Help us make a difference">
+                    <div class="char-count">Max 60 characters</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="presentation_text">Your Story *</label>
+                    <textarea id="presentation_text" name="presentation_text" required 
+                              placeholder="Tell us your story... Why are you raising funds? Who will benefit? How will the funds be used?"></textarea>
+                    <div class="char-count">Try to keep between 300-500 words</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="medical, emergency, family">
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Campaign</button>
+            </form>
+            
+            <div class="whatsapp-preview" id="whatsappPreview">
+                <h3>📱 WhatsApp Message Preview</h3>
+                <div class="preview-content" id="previewContent"></div>
+            </div>
+            
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('campaignForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                category: document.getElementById('category').value,
+                target_amount: document.getElementById('target_amount').value,
+                donation_type: document.getElementById('donation_type').value,
+                campaign_title: document.getElementById('campaign_title').value,
+                presentation_text: document.getElementById('presentation_text').value,
+                tags: document.getElementById('tags').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            try {
+                // In production, replace with your actual API endpoint
+                const response = await fetch('https://your-api-endpoint.com/submit-campaign', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    
+                    // Show WhatsApp preview
+                    const whatsappPreview = document.getElementById('whatsappPreview');
+                    const previewContent = document.getElementById('previewContent');
+                    
+                    previewContent.textContent = result.whatsapp_message || 
+                        `🌟 *${formData.campaign_title}*\n\nHi! I'm ${formData.name} and I'm raising funds for ${formData.category}. ` +
+                        `Your support would mean a lot! Please consider donating or sharing.\n\n` +
+                        `Campaign Link: https://whydonate.com/campaign/${formData.campaign_title.toLowerCase().replace(/[^a-z0-9]/g, '-')}\n\n` +
+                        `Thank you!`;
+                    
+                    whatsappPreview.style.display = 'block';
+                    
+                    // Show success message
+                    const statusMessage = document.getElementById('statusMessage');
+                    statusMessage.textContent = '✅ Campaign submitted successfully! Check your WhatsApp preview above.';
+                    statusMessage.className = 'status-message success';
+                    statusMessage.style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('campaignForm').reset();
+                    
+                    // Scroll to preview
+                    whatsappPreview.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                
+                const statusMessage = document.getElementById('statusMessage');
+                statusMessage.textContent = '❌ There was an error submitting your campaign. Please try again.';
+                statusMessage.className = 'status-message error';
+                statusMessage.style.display = 'block';
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Character counters
+        document.getElementById('campaign_title').addEventListener('input', function() {
+            const charCount = this.value.length;
+            const counter = this.nextElementSibling;
+            counter.textContent = `${charCount}/60 characters`;
+            
+            if (charCount > 60) {
+                counter.style.color = '#ef4444';
+            } else if (charCount > 50) {
+                counter.style.color = '#f59e0b';
+            } else {
+                counter.style.color = '#6b7280';
+            }
+        });
+        
+        document.getElementById('presentation_text').addEventListener('input', function() {
+            const wordCount = this.value.trim().split(/\s+/).length;
+            const counter = this.nextElementSibling;
+            counter.textContent = `${wordCount} words`;
+            
+            if (wordCount < 300) {
+                counter.style.color = '#f59e0b';
+            } else if (wordCount > 500) {
+                counter.style.color = '#ef4444';
+            } else {
+                counter.style.color = '#10b981';
+            }
+        });
+    </script>
+</body>
+</html>
