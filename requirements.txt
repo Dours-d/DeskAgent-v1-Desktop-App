@@ -1,5 +1,9 @@
-pandas
-selenium
-flask
 tkinter
 pillow
+pandas>=1.5.0
+selenium>=4.0.0
+Flask>=2.0.0
+requests>=2.28.0
+python-dotenv>=0.20.0
+openpyxl>=3.0.0
+xlrd>=2.0.0
