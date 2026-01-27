@@ -1,30 +1,49 @@
-# DeskAgent v1 Desktop Application
+# DeskAgent v1
 
-desktop agent for fundraising campaigns mangement
+Automated fundraising campaign manager for Whydonate.
 
+## Quick Start
 
+A. **Install requirements:**
+	```
+	pip install -r requirements.txt
+	```
 
-DeskAgent v1 – Responsibilities
+B. **Run DeskAgent v1:**
 
-1\.	Help manage fundraising campaigns.
+1. Setup Chrome profile (one time):
+   		· Run: python scripts/profile_setup.py
+   		· Manually login to Whydonate with VPN
+   		· Close browser
+2. Run DeskAgent:
+	```	
+   python scripts/deskagent_v1.py
+   	```
+C.	**Features**
 
-2\.	Work with a CSV file called `campaigns\_master.csv` on my Desktop.
+· Campaign Management: Add/edit campaigns in CSV
+· Text Processing: Clean and improve campaign text
+· Whydonate Automation: Create campaigns automatically
+· WhatsApp Messages: Generate sharing messages
+· Persistent Sessions: Login once, use forever
 
-3\.	For each person/campaign, it should:  
+File Structure
 
-– Clean and improve their presentation text.  
+```
+DeskAgent-v1-Desktop-Application/
+├── data/
+│   ├── .csv/campaigns_master.csv     # Campaign database
+│   └── chrome_profile/               # Chrome session data
+├── scripts/
+│   ├── deskagent_v1.py              # Main application
+│   └── requirements.txt             # Python dependencies
+└── README.md
+```
 
-– Suggest a campaign title.  
+Notes
 
-– Draft a WhatsApp message for them with their link.
+· Requires VPN connection to Netherlands for Whydonate access
+· ChromeDriver must match your Chrome version
+· First login must be done manually due to Whydonate's bug
 
-4\.	Later, it will also help with other projects and notes.
-
-5\. create a form to frame the data collected for the purpose of opening a Whydonate campaign, 
-
-6\. create a remote agent available online to collect these informations from the user which get an access.. to a chatbox form page.
-
-
-
-files associated : agent\_notes.txt , config.txt
-
+NO PUN INTENDED.
