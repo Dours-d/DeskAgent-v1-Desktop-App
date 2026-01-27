@@ -1,0 +1,64 @@
+2026-01-26 16:38:48,811 - WhydonateBot - INFO - Initialized WhydonateBot. Base directory: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application
+2026-01-26 16:38:48,811 - WhydonateBot - INFO - Log file: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application\data\logs\whydonate_bot.log
+2026-01-26 16:38:48,811 - WhydonateBot - INFO - Running with visible browser
+2026-01-26 16:38:54,218 - WhydonateBot - ERROR - Failed to initialize ChromeDriver: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff713295715
+	0x7ff713295770
+	0x7ff71304108d
+	0x7ff713081bb4
+	0x7ff71307d0e9
+	0x7ff7130d4171
+	0x7ff7130d39d6
+	0x7ff71308cc28
+	0x7ff71308db33
+	0x7ff71357e9f0
+	0x7ff713578ded
+	0x7ff71359969a
+	0x7ff7132b11e5
+	0x7ff7132b99cc
+	0x7ff71329ebf4
+	0x7ff71329eda6
+	0x7ff713284e87
+	0x7fffc42ce8d7
+	0x7fffc658c53c
+
+2026-01-26 16:42:20,077 - WhydonateBot - INFO - Initialized WhydonateBot. Base directory: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application
+2026-01-26 16:42:20,077 - WhydonateBot - INFO - Log file: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application\data\logs\whydonate_bot.log
+2026-01-26 16:42:20,078 - WhydonateBot - INFO - Running with visible browser
+2026-01-26 16:42:22,469 - WhydonateBot - ERROR - Failed to initialize ChromeDriver: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff713295715
+	0x7ff713295770
+	0x7ff71304108d
+	0x7ff713081bb4
+	0x7ff71307d0e9
+	0x7ff7130d4171
+	0x7ff7130d39d6
+	0x7ff71308cc28
+	0x7ff71308db33
+	0x7ff71357e9f0
+	0x7ff713578ded
+	0x7ff71359969a
+	0x7ff7132b11e5
+	0x7ff7132b99cc
+	0x7ff71329ebf4
+	0x7ff71329eda6
+	0x7ff713284e87
+	0x7fffc42ce8d7
+	0x7fffc658c53c
+
+2026-01-26 17:15:16,999 - WhydonateBot - INFO - Initialized WhydonateBot. Base directory: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application
+2026-01-26 17:15:16,999 - WhydonateBot - INFO - Log file: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application\data\logs\whydonate_bot.log
+2026-01-26 17:15:17,000 - WhydonateBot - INFO - Running with visible browser
+2026-01-26 17:15:17,835 - WhydonateBot - INFO - ChromeDriver initialized successfully
+2026-01-26 17:15:19,988 - WhydonateBot - INFO - Browser closed
+2026-01-26 17:15:55,015 - WhydonateBot - INFO - Initialized WhydonateBot. Base directory: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application
+2026-01-26 17:15:55,016 - WhydonateBot - INFO - Log file: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application\data\logs\whydonate_bot.log
+2026-01-26 17:15:55,016 - WhydonateBot - INFO - Running with visible browser
+2026-01-26 17:15:55,717 - WhydonateBot - INFO - ChromeDriver initialized successfully
+2026-01-26 17:15:55,717 - WhydonateBot - INFO - Loading config from: C:\Users\gaelf\Desktop\DeskAgent-v1-Desktop-Application\data\config.txt
+2026-01-26 17:15:55,717 - WhydonateBot - ERROR - Invalid JSON in config file: Expecting value: line 1 column 1 (char 0)
+2026-01-26 17:15:57,873 - WhydonateBot - INFO - Browser closed

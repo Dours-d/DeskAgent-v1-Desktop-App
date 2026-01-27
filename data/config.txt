@@ -1,0 +1,153 @@
+{
+  "system": {
+    "version": "1.0.0",
+    "name": "DeskAgent v1",
+    "environment": "development",
+    "debug_mode": true,
+    "auto_start": false,
+    "data_directory": "./data",
+    "logs_directory": "./data/logs",
+    "backup_directory": "./data/backups",
+    "exports_directory": "./data/exports"
+  },
+  
+
+  #"whydonate": {
+  # "enabled": true,
+  #  "base_url": "https://www.whydonate.com",
+  # "login_url": "https://www.whydonate.com/en/login",
+  #  "create_campaign_url": "https://www.whydonate.com/en/fundraiser/create",
+  #  "username": "gael.fichet@gmail.com",
+  #  "password": "Whydonate@gael1",
+  #  "auto_login": true,
+  #  "default_category": "Emergency relief",
+  #  "default_currency": "EUR",
+  #  "timeout": 30,
+  #  "headless": true,
+  #  "take_screenshots": true,
+  #  "screenshot_dir": "./data/screenshots",
+  #  "default_target": 20000
+  #},
+  
+#simple whydonate
+  {
+  "whydonate": {
+    "enabled": true,
+    "username": "your_actual_email@example.com",
+    "password": "your_actual_password",
+    "headless": false,
+    "timeout": 30
+  }
+}
+
+  "whatsapp": {
+    "enable_templates": true,
+    "default_template": "standard",
+    "templates": {
+      "standard": "🌟 *{title}*\n\nHi! I'm {name} and I've started a fundraising campaign. Your support would mean the world to us!\n\n📋 Campaign: {title}\n🔗 Donate here: {url}\n\nThank you for your generosity!\n\n- {name}",
+      "urgent": "🚨 *URGENT: {title}*\n\nDear friends,\n\nI'm {name} and we urgently need your support!\n\n🔗 Please help now: {url}\n\nEven small amounts make a difference. Please share!\n\nThank you,\n{name}",
+      "thank_you": "🙏 *Thank You!*\n\nHello! This is {name}.\n\nThank you for considering our campaign: {title}\n\n🔗 Campaign link: {url}\n\nWith gratitude,\n{name}"
+    },
+    "include_link": true,
+    "include_hashtags": true,
+    "default_hashtags": [
+      "fundraising",
+      "donation",
+      "support"
+    ]
+  },
+  "csv": {
+    "path": "./data/.csv/campaigns_master.csv",
+    "encoding": "utf-8",
+    "backup_count": 5,
+    "backup_interval": 24,
+    "auto_save": true,
+    "auto_backup": true
+  },
+  "processing": {
+    "auto_clean_text": true,
+    "auto_suggest_title": true,
+    "auto_generate_whatsapp": true,
+    "backup_before_process": true,
+    "create_backups": true,
+    "max_description_length": 5000,
+    "min_description_length": 50
+  },
+  "campaign_defaults": {
+    "category": "General",
+    "currency": "EUR",
+    "target_amount": 1000,
+    "donation_type": "one-time",
+    "status": "draft",
+    "country": "Netherlands",
+    "language": "en"
+  },
+  "ui": {
+    "theme": "light",
+    "font_size": 10,
+    "font_family": "Segoe UI",
+    "window_width": 1000,
+    "window_height": 750,
+    "auto_refresh": true,
+    "refresh_interval": 30,
+    "show_tooltips": true,
+    "confirm_deletes": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "./data/logs/deskagent.log",
+    "max_size_mb": 10,
+    "backup_count": 5,
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "api": {
+    "enabled": true,
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": true,
+    "cors_enabled": true,
+    "rate_limit": "100 per day",
+    "api_key_required": false
+  },
+  "security": {
+    "encrypt_passwords": false,
+    "session_timeout": 3600,
+    "max_login_attempts": 5,
+    "password_min_length": 8
+  },
+  "notifications": {
+    "email_notifications": false,
+    "whatsapp_notifications": false,
+    "desktop_notifications": true,
+    "sound_notifications": true
+  },
+  "integrations": {
+    "whatsapp_business_api": {
+      "enabled": false,
+      "api_url": "",
+      "access_token": "",
+      "phone_number_id": ""
+    },
+    "google_sheets": {
+      "enabled": false,
+      "spreadsheet_id": "",
+      "credentials_file": ""
+    },
+    "email_smtp": {
+      "enabled": false,
+      "server": "",
+      "port": 587,
+      "username": "",
+      "password": ""
+    }
+  },
+  "advanced": {
+    "multi_threading": false,
+    "max_threads": 3,
+    "retry_failed": true,
+    "max_retries": 3,
+    "retry_delay": 5,
+    "use_proxy": false,
+    "proxy_list": []
+  }
+}
